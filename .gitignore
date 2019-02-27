@@ -1,0 +1,24 @@
+## Build generated
+.DS_Store
+build/
+DerivedData
+
+## Various settings
+xcuserdata
+xcshareddata
+
+## Other
+*.xccheckout
+*.xcuserstate
+*.xcscheme
+Manifest.lock
+
+## Pods
+Pods/*
+WeatherApp.xcworkspace/contents.xcworkspacedata
+
+## AppCode
+.idea/
+
+## Carthage
+Carthage/
