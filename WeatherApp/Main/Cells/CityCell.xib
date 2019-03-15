@@ -18,39 +18,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kyiv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqy-jc-hPg">
-                        <rect key="frame" x="104" y="20" width="28" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-gj-Zc2">
-                        <rect key="frame" x="16" y="20" width="80" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunrise-thin" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-gj-Zc2">
+                        <rect key="frame" x="8" y="12" width="96" height="96"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="J2h-hU-Ry3"/>
-                            <constraint firstAttribute="height" constant="80" id="nn4-dh-p8x"/>
+                            <constraint firstAttribute="width" constant="96" id="J2h-hU-Ry3"/>
+                            <constraint firstAttribute="height" constant="96" id="nn4-dh-p8x"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24°С" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-Rm-NDT">
-                        <rect key="frame" x="104" y="42" width="64" height="36"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-8n-RsC">
+                        <rect key="frame" x="112" y="24" width="84" height="72"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kyiv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqy-jc-hPg">
+                                <rect key="frame" x="0.0" y="0.0" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24°С" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-Rm-NDT">
+                                <rect key="frame" x="0.0" y="24" width="84" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Fqy-jc-hPg" firstAttribute="leading" secondItem="d2O-gj-Zc2" secondAttribute="trailing" constant="8" id="AWd-vU-Ley"/>
-                    <constraint firstItem="vxt-Rm-NDT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LmM-eO-0xt"/>
-                    <constraint firstItem="d2O-gj-Zc2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fIT-Xr-o05"/>
+                    <constraint firstItem="5PA-8n-RsC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bRC-Lg-kKQ"/>
                     <constraint firstItem="d2O-gj-Zc2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="faw-Ao-7ib"/>
-                    <constraint firstItem="vxt-Rm-NDT" firstAttribute="leading" secondItem="d2O-gj-Zc2" secondAttribute="trailing" constant="8" id="jBO-fa-bps"/>
-                    <constraint firstItem="Fqy-jc-hPg" firstAttribute="top" secondItem="d2O-gj-Zc2" secondAttribute="top" id="yZL-l4-kbM"/>
+                    <constraint firstItem="d2O-gj-Zc2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fl6-Cr-zhz"/>
+                    <constraint firstItem="5PA-8n-RsC" firstAttribute="leading" secondItem="d2O-gj-Zc2" secondAttribute="trailing" constant="8" id="mTo-pV-dj3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="nameLabel" destination="Fqy-jc-hPg" id="dW9-BL-RPQ"/>
                 <outlet property="temperatureLabel" destination="vxt-Rm-NDT" id="GvB-VL-kc4"/>
+                <outlet property="weatherImageView" destination="d2O-gj-Zc2" id="lfk-NY-L5R"/>
             </connections>
             <point key="canvasLocation" x="12.800000000000001" y="55.772113943028494"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Sunrise-thin" width="800" height="800"/>
+    </resources>
 </document>

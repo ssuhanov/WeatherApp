@@ -12,15 +12,19 @@ import CityTransformer
 class CityCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var weatherImageView: UIImageView!
     
     func configure(city: City) {
         self.clearFields()
         self.nameLabel.text = city.name
         self.temperatureLabel.text = "\(city.temperature)°С"
+        print(city.weather)
+        self.weatherImageView.image = UIImage(named: "\(city.weather)-thin")
     }
     
     private func clearFields() {
         self.nameLabel.text = nil
         self.temperatureLabel.text = nil
+        self.weatherImageView.image = nil
     }
 }
