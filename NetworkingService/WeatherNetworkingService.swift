@@ -23,6 +23,7 @@ public class WeatherNetworkingService {
         Alamofire.request(RequestURL,
                           method: .get,
                           parameters: RequestParameters).responseJSON { (response) in
+                            print(response.result.value ?? "NO DATA")
                             let transfomedResponse: SimpleResponse? = ResponseTransformer().transform(data: response.data)
                             completion?(transfomedResponse?.list)
         }

@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        #warning("TODO: - here update cities data")
         CityNetworkingService().getCityData { [weak self] (cities) in
             cities.map { self?.updateDataSource(cities: $0) }
         }
@@ -35,7 +34,6 @@ class MainViewController: UIViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        print("Updated")
     }
     
     private func configureTableView() {

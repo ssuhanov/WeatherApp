@@ -15,7 +15,7 @@ class CityTransformerTests: XCTestCase {
     var correctSimpleCity = SimpleCity()
     var incorrectSimpleCity = SimpleCity()
     
-    let correctWeatherDescription = "correct_weather_description"
+    let correctWeather = "correct_weather_description"
     let correctTemperature = 56.8
     let correctPressure = 23356
     let correctHumidity = 1234
@@ -24,7 +24,7 @@ class CityTransformerTests: XCTestCase {
 
     override func setUp() {
         var weather = SimpleWeather()
-        weather.description = self.correctWeatherDescription
+        weather.main = self.correctWeather
         
         var main = SimpleMain()
         main.temp = self.correctTemperature
@@ -42,11 +42,11 @@ class CityTransformerTests: XCTestCase {
     
     func testCorrectCityInitializing() {
         let result = City(simpleCity: self.correctSimpleCity)
-        XCTAssertEqual(result?.weatherDescription, self.correctWeatherDescription, "weather description should be \(self.correctWeatherDescription)")
-        XCTAssertEqual(result?.temperature, self.correctTemperature, "temperature should be \(self.correctTemperature)")
+        XCTAssertEqual(result?.weather, self.correctWeather, "weather should be \(self.correctWeather)")
+        XCTAssertEqual(result?.temperature, Int(self.correctTemperature), "temperature should be \(Int(self.correctTemperature))")
         XCTAssertEqual(result?.pressure, self.correctPressure, "pressure should be \(self.correctPressure)")
         XCTAssertEqual(result?.humidity, self.correctHumidity, "humidity should be \(self.correctHumidity)")
-        XCTAssertEqual(result?.windSpeed, self.correctWindSpeed, "wind speed should be \(self.correctWindSpeed)")
+        XCTAssertEqual(result?.windSpeed, Int(self.correctWindSpeed), "wind speed should be \(Int(self.correctWindSpeed))")
         XCTAssertEqual(result?.name, self.correctName, "city name should be \(self.correctName)")
     }
     
@@ -57,8 +57,8 @@ class CityTransformerTests: XCTestCase {
         self.correctSimpleCity.wind = nil
         
         let result = City(simpleCity: self.correctSimpleCity)
-        XCTAssertEqual(result?.weatherDescription, self.correctWeatherDescription, "weather description should be \(self.correctWeatherDescription)")
-        XCTAssertEqual(result?.temperature, self.correctTemperature, "temperature should be \(self.correctTemperature)")
+        XCTAssertEqual(result?.weather, self.correctWeather, "weather should be \(self.correctWeather)")
+        XCTAssertEqual(result?.temperature, Int(self.correctTemperature), "temperature should be \(self.correctTemperature)")
         XCTAssertNil(result?.pressure, "pressure should be nil")
         XCTAssertNil(result?.humidity, "humidity should be nil")
         XCTAssertNil(result?.windSpeed, "wind speed should be nil")

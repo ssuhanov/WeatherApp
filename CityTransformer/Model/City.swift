@@ -10,26 +10,26 @@ import Foundation
 import NetworkingService
 
 public class City {
-    public let weatherDescription: String
-    public let temperature: Double
+    public let weather: String
+    public let temperature: Int
     public let pressure: Int?
     public let humidity: Int?
-    public let windSpeed: Double?
+    public let windSpeed: Int?
     public let name: String
 
     public init?(simpleCity: SimpleCity) {
-        guard let weatherDescription = simpleCity.weather?.first?.description,
+        guard let weather = simpleCity.weather?.first?.main,
             let temperature = simpleCity.main?.temp,
             let name = simpleCity.name else {
                 return nil
         }
         
-        self.weatherDescription = weatherDescription
-        self.temperature = temperature
+        self.weather = weather
+        self.temperature = Int(temperature)
         self.name = name
         
         self.pressure = simpleCity.main?.pressure
         self.humidity = simpleCity.main?.humidity
-        self.windSpeed = simpleCity.wind?.speed
+        self.windSpeed = simpleCity.wind?.speed.map { Int($0) }
     }
 }

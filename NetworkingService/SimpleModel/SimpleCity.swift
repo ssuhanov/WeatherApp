@@ -18,7 +18,7 @@ public struct SimpleCity: Decodable {
 }
 
 public struct SimpleWeather: Decodable {
-    public var description: String?
+    public var main: String?
     
     public init() { }
 }

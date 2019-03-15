@@ -10,14 +10,17 @@ import UIKit
 import CityTransformer
 
 class CityCell: UITableViewCell {
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     
     func configure(city: City) {
         self.clearFields()
-        self.cityLabel.text = city.name
+        self.nameLabel.text = city.name
+        self.temperatureLabel.text = "\(city.temperature)°С"
     }
     
     private func clearFields() {
-        self.cityLabel.text = nil
+        self.nameLabel.text = nil
+        self.temperatureLabel.text = nil
     }
 }
