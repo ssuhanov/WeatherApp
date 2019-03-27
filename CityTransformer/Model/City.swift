@@ -10,12 +10,16 @@ import Foundation
 import NetworkingService
 
 public class City {
-    public let weather: String
-    public let temperature: Int
-    public let pressure: Int?
-    public let humidity: Int?
-    public let windSpeed: Int?
-    public let name: String
+    public var weather: String
+    public var temperature: Int
+    public var pressure: Int?
+    public var humidity: Int?
+    public var windSpeed: Int?
+    public var name: String
+    
+    public var weatherIconName: String {
+        return "\(self.weather)-thin"
+    }
 
     public init?(simpleCity: SimpleCity) {
         guard let weather = simpleCity.weather?.first?.main,
@@ -31,5 +35,11 @@ public class City {
         self.pressure = simpleCity.main?.pressure
         self.humidity = simpleCity.main?.humidity
         self.windSpeed = simpleCity.wind?.speed.map { Int($0) }
+    }
+    
+    public init(name: String, weather: String, temperature: Int) {
+        self.name = name
+        self.weather = weather
+        self.temperature = temperature
     }
 }

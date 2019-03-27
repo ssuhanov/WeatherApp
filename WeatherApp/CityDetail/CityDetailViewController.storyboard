@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lf8-Oc-OtH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--City Detail View Controller-->
+        <scene sceneID="NCO-Wj-KZc">
+            <objects>
+                <viewController id="Lf8-Oc-OtH" customClass="CityDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D0g-QG-CFy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvR-8G-Chu" customClass="CityDetailView" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="153.5" width="240" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="GXi-k7-5Nv"/>
+                                    <constraint firstAttribute="height" constant="360" id="kPf-1w-c8c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WvR-8G-Chu" firstAttribute="centerY" secondItem="D0g-QG-CFy" secondAttribute="centerY" id="BTs-0c-xds"/>
+                            <constraint firstItem="WvR-8G-Chu" firstAttribute="centerX" secondItem="D0g-QG-CFy" secondAttribute="centerX" id="u4K-ae-IMx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uN6-Od-1qu"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityDetailView" destination="WvR-8G-Chu" id="2eA-Pc-uBp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tab-Ec-syi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="1"/>
+        </scene>
+    </scenes>
+</document>

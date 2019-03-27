@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
+        self.navigationItem.title = "Weather App"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +32,7 @@ class MainViewController: UIViewController {
     
     private func updateDataSource(cities: [City]) {
         self.tableViewDataSource?.update(cities: cities)
+        self.tableViewDelegate?.update(cities: cities)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -39,6 +41,7 @@ class MainViewController: UIViewController {
     private func configureTableView() {
         self.tableViewDataSource = MainTableViewDataSource()
         self.tableViewDelegate = MainTableViewDelegate()
+        self.tableViewDelegate?.view = self
         self.tableView.dataSource = self.tableViewDataSource
         self.tableView.delegate = self.tableViewDelegate
         self.tableView.registerCellType(CityCell.self)

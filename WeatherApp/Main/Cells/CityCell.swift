@@ -19,7 +19,7 @@ class CityCell: UITableViewCell {
         self.nameLabel.text = city.name
         self.temperatureLabel.text = "\(city.temperature)°С"
         print(city.weather)
-        self.weatherImageView.image = UIImage(named: "\(city.weather)-thin")
+        self.weatherImageView.image = UIImage(named: city.weatherIconName)
     }
     
     private func clearFields() {
